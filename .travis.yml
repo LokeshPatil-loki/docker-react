@@ -7,5 +7,5 @@ services:
 before_install:
   - docker build -f Dockerfile.dev -t lokilokesh/docker-react .
 
-scripts:
+script:
   - docker run lokilokesh/docker-react npm test -- --coverage --watchAll=false
