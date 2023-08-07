@@ -1,9 +1,0 @@
-sudo: required
-services:
-  - docker
-
-before_install:
-  - docker build -f Dockerfile.dev -t lokilokesh/docker-react .
-
-scripts:
-  - docker run lokilokesh/docker-react npm test -- --coverage --watchAll=false
