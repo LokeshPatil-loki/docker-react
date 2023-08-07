@@ -9,3 +9,21 @@ before_install:
 
 script:
   - docker run lokilokesh/docker-react npm test -- --coverage --watchAll=false
+
+deploy:
+  provider: azure_web_apps
+  username: $AZURE_USERNAME       # If AZURE_WA_USERNAME isn't set
+  password: $AZURE_PASSWORD   # If AZURE_WA_PASSWORD isn't set
+  site: docker-react-depl.azurewebsites.net       # If AZURE_WA_SITE isn't set
+## AWS Deploy
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "ap-south-1"
+#   app: "loki-docker-react"
+#   env: "Docker-react-loki-env"
+#   bucket_name: "elasticbeanstalk-ap-south-1-739674782442"
+#   bucket_path: "docker-react-loki"
+#   on:
+#     branch: "master"
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
